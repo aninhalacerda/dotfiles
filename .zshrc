@@ -6,8 +6,9 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+#ZSH_THEME="pure"
 
-CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 source $ZSH/oh-my-zsh.sh
@@ -39,9 +40,14 @@ alias zshconfig="vim ~/.zshrc"
 alias psql_start="postgres -D /usr/local/var/postgres/"
 
 alias ll="ls -la"
+alias use_bash="chsh -s /usr/local/bin/bash"
+
+alias readme="cat README.md"
 
 alias g="git"
 alias st="git status"
+alias view-on-gitub=$'open `git config --get remote.origin.url | awk \'/git@github.com:/ { sub(/git@github.com:/, "https://github.com/") }; { print }\'`'
+alias p_and_push="git pull -r && git push origin master"
 
 #Ruby development
 alias bil="bundle install"
@@ -54,14 +60,15 @@ alias woc="cd ~/Development/women-contributing"
 #Node development
 alias node-check="echo \"==== Dependencies check ====\" && depcheck && echo \"==== Dependencies versions check ====\" && ncu"
 
+#Java development with Gradle
+alias gt="./gradlew clean test"
+alias gb="./gradlew clean build"
+
 #Infrastructure
 alias vup="vagrant up"
 alias vssh="vagrant ssh"
 alias c="docker-compose"
 alias k="kubectl"
-
-# Project
-alias bci="cd ~/Work/bci"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /usr/local/google-cloud-sdk/path.zsh.inc ]; then
