@@ -56,6 +56,7 @@ alias bexec="bundle exec"
 
 alias dev="cd ~/Development"
 alias woc="cd ~/Development/women-contributing"
+alias met="cd ~/Work/met/portal"
 
 #Node development
 alias node-check="echo \"==== Dependencies check ====\" && depcheck && echo \"==== Dependencies versions check ====\" && ncu"
